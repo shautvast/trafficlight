@@ -24,17 +24,17 @@ function handle(event, next) {
 }
 
 function happy() {
-    emotion().value = "happy";
+    emotion().value = "3";
     submit();
 }
 
 function unsure() {
-    emotion().value = "unsure"
+    emotion().value = "2"
     submit();
 }
 
 function sad() {
-    emotion().value = "sad";
+    emotion().value = "1";
     submit();
 }
 
@@ -43,7 +43,7 @@ function emotion() {
 }
 
 function submit() {
-    get('#timestamp').value = Date.now();
+    get('#timestamp').value = formatDate(new Date());
     get('#emotionsForm').submit;
 }
 
@@ -62,5 +62,12 @@ function getValue(element) {
 }
 
 function setHtml(element, innerHtml) {
-    return get(element).innerHTML=innerHtml;
+    let object = get(element);
+     if (object){
+         object.innerHTML=innerHtml;
+     }
+}
+
+function formatDate(date){
+    return date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate();
 }

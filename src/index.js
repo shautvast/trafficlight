@@ -8,9 +8,8 @@ const PORT = process.env.PORT || 5000
 const logins = new Map();
 logins.set("sander", "$2b$10$6P.6pE7M/6C9l/xXKDxJFucTL313GwESnhZ3aAqtVnv.ouLca/y6a");
 
-
 express()
-    .use(express.urlencoded())
+    .use(express.urlencoded({ extended: true }))
     .use(express.static(path.join(__dirname, '/public')))
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'ejs')
@@ -35,6 +34,8 @@ function appendToStorage(req, res) {
         }
     }
 }
+
+
 
 function sendData(req, res) {
     fs.readFile("dat", (err, data) => {
