@@ -1,0 +1,8 @@
+{
+  "name": "stoplicht",
+  "description": "A Node.js app using Express 4",
+  "repository": "https://github.com/shautvast/stoplicht.git",
+  "logo": "",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}

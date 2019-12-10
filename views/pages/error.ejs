@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+<body>
+<form id="emotionsForm" method="POST" action="/submit-form">
+<% include ../partials/signin.ejs %>
+<p id="errorMessage" class="error">Vul je naam/wachtwoord in</p>
+<% include ../partials/body.ejs %>
+</form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+const bcrypt = require('bcrypt');
+
+if (process.argv.length === 0) {
+    console.log("Usage: encrypt <password>");
+} else {
+    let plain= process.argv[2];
+    let hash=cryptPassword(plain);
+    console.log(hash);
+}
+
+function cryptPassword(password) {
+    let salt = bcrypt.genSaltSync(10);
+    return bcrypt.hashSync(password, salt);
+};
+
+function comparePassword(plainPass, hashword) {
+    return bcrypt.compareSync(plainPass, hashword);
+};

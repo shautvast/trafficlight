@@ -1,0 +1,40 @@
+body{
+    font-family: Arial;
+}
+
+h1{
+    font-size: 80px;
+}
+.signin{
+    text-align: left;
+}
+button{
+    margin: auto; 
+}
+
+.emotions{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+button{
+    background: white;
+    border: none;
+}
+
+input[type="text"] {
+    font-size:24px;
+    border: none;
+}
+
+input[type="password"] {
+    font-size:24px;
+    border: none;
+}
+
+.error{
+    font-size: 24px;
+    color: red;
+}
