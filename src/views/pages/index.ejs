@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <% include ../partials/header.ejs %>
+    <% include ../partials/header.ejs %>
 </head>
 <body>
-<form id="emotionsForm" method="POST" action="/submit-form">
-  <% include ../partials/signin.ejs %>
-  <% include ../partials/body.ejs %>
-</form>
+<div class="main">
+    <h1>Rate your day</h1>
+    <form id="emotionsForm" method="POST" action="/submit-form">
+        <% include ../partials/signin.ejs %>
+        <% include ../partials/body.ejs %>
+    </form>
+</div>
 </body>
 </html>

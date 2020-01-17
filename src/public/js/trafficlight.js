@@ -2,22 +2,16 @@ get("#happy").addEventListener('click', happy);
 get('#unsure').addEventListener('click', unsure);
 get('#sad').addEventListener('click', sad);
 get('#username').addEventListener("keydown", event => {
+    console.log(event);
     checkError();
-    if (event.which == 13) {
-        get('#password').focus();
-        event.preventDefault();
-    }
-});
-get('#password').addEventListener("keydown", event => {
-    checkError();
-    if (event.which == 13) {
+    if (event.which === 13) {
         get('#username').focus();
         event.preventDefault();
     }
 });
 
 function handle(event, next) {
-    if (event.which == 13) {
+    if (event.which === 13) {
         get(next).focus;
         event.preventDefault();
     }
@@ -29,7 +23,7 @@ function happy() {
 }
 
 function unsure() {
-    emotion().value = "2"
+    emotion().value = "2";
     submit();
 }
 
@@ -48,7 +42,7 @@ function submit() {
 }
 
 function checkError(){
-    if (getValue("#username") != '' && getValue("#password") !=''){
+    if (getValue("#username") !== ''){
         setHtml("#errorMessage",'');
     }
 }
