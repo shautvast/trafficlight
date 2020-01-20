@@ -2,7 +2,8 @@ const express = require('express');
 const fs = require('fs');
 const bodyParser = require('body-parser');
 const path = require('path');
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5555;
+const DATA_PATH = process.env.DATA_PATH || "data";
 
 express()
     .use(express.urlencoded({extended: true}))
@@ -18,7 +19,7 @@ function appendToStorage(req, res) {
     if (req.body.username === '') {
         res.render('pages/error');
     } else {
-        fs.appendFile("dat", req.body.timestamp + ", " + req.body.username + ", " + req.body.emotion + "\n", err => {
+        fs.appendFile(DATA_PATH + "/data.csv", req.body.timestamp + ", " + req.body.username + ", " + req.body.emotion + "\n", err => {
             if (err) {
                 return console.log(err);
             }
@@ -28,7 +29,7 @@ function appendToStorage(req, res) {
 }
 
 function sendData(req, res) {
-    fs.readFile("dat", (err, data) => {
+    fs.readFile("data.csv", (err, data) => {
         if (err) {
             console.error(err);
             res.render('pages/error');

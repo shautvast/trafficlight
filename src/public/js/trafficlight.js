@@ -18,17 +18,17 @@ function handle(event, next) {
 }
 
 function happy() {
-    emotion().value = "3";
+    emotion().value = "1";
     submit();
 }
 
 function unsure() {
-    emotion().value = "2";
+    emotion().value = "0";
     submit();
 }
 
 function sad() {
-    emotion().value = "1";
+    emotion().value = "-1";
     submit();
 }
 
